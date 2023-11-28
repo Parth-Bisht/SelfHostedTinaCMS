@@ -7,8 +7,21 @@ export class CustomAuthProvider extends AbstractAuthProvider {
     super();
   }
 
+  getUser() {
+    if (localStorage.getItem(LOCAL_KEY)) {
+      return true;
+    }
+    console.log("OUTSIDE");
+    return false;
+  }
+
   async authenticate() {
-    localStorage.setItem(LOCAL_KEY, JSON.stringify("test-token"));
+    window.location.href = "/login";
+    // localStorage.setItem(LOCAL_KEY, JSON.stringify("test-token"));
+  }
+
+  authorize() {
+    return true;
   }
 
   async getToken() {
@@ -18,13 +31,6 @@ export class CustomAuthProvider extends AbstractAuthProvider {
     } else {
       return { id_token: "" };
     }
-  }
-
-  getUser() {
-    if (localStorage.getItem(LOCAL_KEY)) {
-      return true;
-    }
-    return false;
   }
 
   logout() {

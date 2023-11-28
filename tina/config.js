@@ -8,10 +8,11 @@ import post from "./collections/post";
 import { CustomAuthProvider } from "./customAuth";
 
 export const config = defineConfig({
-  contentApiUrlOverride: "/api/gql",
-  authProvider: process.env.TINA_PUBLIC_IS_LOCAL==="true"
-    ? new LocalAuthProvider()
-    : new CustomAuthProvider(),
+  contentApiUrlOverride: "/api/tina/gql",
+  authProvider:
+    process.env.TINA_PUBLIC_IS_LOCAL === "true"
+      ? new LocalAuthProvider()
+      : new UsernamePasswordAuthJSProvider(),
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   branch:
     process.env.NEXT_PUBLIC_TINA_BRANCH || // custom branch env override
@@ -20,15 +21,15 @@ export const config = defineConfig({
   token: process.env.TINA_TOKEN,
   media: {
     // If you wanted cloudinary do this
-    // loadCustomStore: async () => {
-    //   const pack = await import("next-tinacms-cloudinary");
-    //   return pack.TinaCloudCloudinaryMediaStore;
-    // },
-    // this is the config for the tina cloud media store
-    tina: {
-      publicFolder: "public",
-      mediaRoot: "uploads",
+    loadCustomStore: async () => {
+      const pack = await import("next-tinacms-s3");
+      return pack.TinaCloudS3MediaStore;
     },
+    // this is the config for the tina cloud media store
+    // tina: {
+    //   publicFolder: "public",
+    //   mediaRoot: "uploads",
+    // },
   },
   build: {
     publicFolder: "public", // The public asset folder for your framework

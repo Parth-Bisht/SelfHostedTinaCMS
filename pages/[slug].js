@@ -1,8 +1,8 @@
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../components/Layout";
 import { tinaField, useTina } from "tinacms/dist/react";
-import { client } from "../tina/__generated__/client";
-import { dbConnection } from "../lib/databaseConnection";
+import { client } from "../tina/__generated__/databaseClient";
+// import { dbConnection } from "../lib/databaseConnection";
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -25,7 +25,7 @@ export default function Home(props) {
 // This is an example of a page generated with Serverside Rendering.
 // This can be switched to a static page by using getStaticProps
 export const getServerSideProps = async ({ params }) => {
-  const { data, query, variables } = await dbConnection.queries.page({
+  const { data, query, variables } = await client.queries.page({
     relativePath: `${params.slug}.mdx`,
   });
 

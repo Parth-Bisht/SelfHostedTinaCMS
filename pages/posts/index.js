@@ -1,7 +1,7 @@
 import { Layout } from "../../components/Layout";
 import Link from "next/link";
 import { useTina } from "tinacms/dist/react";
-import { client } from "../../tina/__generated__/client";
+import { client } from "../../tina/__generated__/databaseClient";
 // import { dbConnection } from "../../lib/databaseConnection";
 
 export default function PostList(props) {

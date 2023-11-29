@@ -1,6 +1,6 @@
 import { Layout } from "../../components/Layout";
 import { useTina } from "tinacms/dist/react";
-import { client } from "../../tina/__generated__/databaseClient";
+import { client } from "../../tina/__generated__/client";
 // import { dbConnection } from "../../lib/databaseConnection";
 
 export default function Home(props) {

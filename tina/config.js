@@ -8,11 +8,11 @@ import post from "./collections/post";
 import { CustomAuthProvider } from "./customAuth";
 
 export const config = defineConfig({
-  contentApiUrlOverride: "/api/tina/gql",
-  authProvider:
-    process.env.TINA_PUBLIC_IS_LOCAL === "true"
-      ? new LocalAuthProvider()
-      : new UsernamePasswordAuthJSProvider(),
+  // contentApiUrlOverride: "/api/tina/gql",
+  // authProvider:
+  //   process.env.TINA_PUBLIC_IS_LOCAL === "true"
+  //     ? new LocalAuthProvider()
+  //     : new UsernamePasswordAuthJSProvider(),
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   branch:
     process.env.NEXT_PUBLIC_TINA_BRANCH || // custom branch env override

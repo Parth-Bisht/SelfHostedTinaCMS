@@ -11,7 +11,7 @@
   "dependencies": {
     "@octokit/rest": "^20.0.2",
     "@tinacms/auth": "^1.0.4",
-    "@tinacms/datalayer": "^1.2.30",
+    "@tinacms/datalayer": "^1.2.32",
     "js-base64": "^3.7.5",
     "mongodb": "^6.3.0",
     "mongodb-level": "^0.0.3",

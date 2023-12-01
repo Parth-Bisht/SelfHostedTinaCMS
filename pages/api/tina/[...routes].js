@@ -38,7 +38,7 @@ const handler = TinaNodeBackend({
   databaseClient,
 });
 
-export default (req, res) => {
+export default async (req, res) => {
   // Modify the request here if you need to
   return handler(req, res);
 };

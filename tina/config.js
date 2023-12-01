@@ -1,4 +1,4 @@
-import { defineConfig, LocalAuthProvider } from "tinacms";
+import { defineConfig, defineStaticConfig, LocalAuthProvider } from "tinacms";
 import {
   UsernamePasswordAuthJSProvider,
   TinaUserCollection,
@@ -7,7 +7,15 @@ import page from "./collections/page";
 import post from "./collections/post";
 import { CustomAuthProvider } from "./customAuth";
 
-export const config = defineConfig({
+// const customUserField = TinaUserCollection.fields[0];
+// customUserField.fields.push({
+//   type: "string",
+//   label: "Role",
+//   name: "role",
+//   options: ["admin", "editor"],
+// });
+
+export const config = defineStaticConfig({
   contentApiUrlOverride: "/api/tina/gql",
   authProvider:
     process.env.TINA_PUBLIC_IS_LOCAL === "true"

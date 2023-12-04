@@ -11,6 +11,8 @@ export default function Home(props) {
     data: props.data,
   });
 
+  console.log(data);
+
   return (
     <Layout>
       <code>
@@ -19,6 +21,7 @@ export default function Home(props) {
             backgroundColor: "lightgray",
           }}
         >
+          
           {JSON.stringify(data.post, null, 2)}
         </pre>
       </code>

@@ -15,6 +15,18 @@ import { CustomAuthProvider } from "./customAuth";
 //   options: ["admin", "editor"],
 // });
 
+TinaUserCollection.fields[0].ui.defaultItem.username = "username--editor";
+// TinaUserCollection.fields[0].ui.allowedActions = {
+//   create: false,
+//   delete: false,
+// };
+// TinaUserCollection.fields[0].ui.beforeSubmit = () => {
+//   // const test = new UsernamePasswordAuthJSProvider();
+//   // const user = await test.getUser();
+//   // console.log(user);
+//   throw new Error();
+// };
+// console.log(TinaUserCollection);
 export const config = defineStaticConfig({
   contentApiUrlOverride: "/api/tina/gql",
   authProvider:

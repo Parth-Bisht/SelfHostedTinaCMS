@@ -13,6 +13,11 @@ export default {
     },
     {
       type: "string",
+      label: "Last modified",
+      name: "lastmodified",
+    },
+    {
+      type: "string",
       label: "Blog Post Body",
       name: "body",
       isBody: true,

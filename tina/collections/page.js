@@ -28,7 +28,6 @@ export default {
   defaultItem: () => {
     getUserData()
       .then((n) => {
-        console.log(n);
         name = n;
       })
       .catch((error) => {
@@ -70,5 +69,6 @@ export default {
       }
       return undefined;
     },
+    
   },
 };
